@@ -1,0 +1,52 @@
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ /* Formulaire */
+
+.container {
+    background-color: whitesmoke;
+}
+
+/* Racine du prjoet */
+
+main {
+    margin: 5px;
+}
+
+/* L'entête */
+
+header {
+    background-color: whitesmoke;
+}
+
+/* Corps */
+section {
+    box-shadow: 1px 2px 1px 2px;
+    background-color: #FFA200;
+}
+
+/* Pied de Page */
+
+footer {
+    background-color: whitesmoke;
+}
+
+/* Image pour du bloc 2*/
+
+.img-fluid {
+    border-radius: 5px 25px;
+    height: 100%;
+}
+#img-fluid {
+    border-radius: 5px;
+    height: 70px;
+    width: 70px;
+    margin: 2%;
+}
+
+
+p {
+    font-size: 10px;
+}  

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="ressources/css/style.css">
+
+    <title>Formulaire d'inscription</title>
+</head>
+<body>
+    <main>
+            <!-- L'entête -->
+    <header>
+        <div class="justify-content-between align-items-center">
+            <ul class="list-unstyled d-flex">
+                <li><i class="fa fa-circle"></i></li>
+                <li><i class="fa fa-circle"></i></li>
+                <li><i class="fa fa-circle"></i></li>
+                <li class="mx-auto mt-2">Formulaire d'inscription Futur Digital</li>
+            </ul>
+            <hr aria-flowto="max-width">
+        </div>    
+    </header>
+
+    <!-- Corps -->
+    <section>
+        <div class="container bg-black shadow pb-5">
+            <img src="ressources/images/logo.webp" alt="Photo" class="img-fluid" id="img-fluid">
+            <div class="container ">
+                <div class="row">
+                    <!-- Bloc 1 - Formulaire d'inscription -->
+                    <div class="col-md-6 mx-auto shadow">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Formulaire -->
+                                <form id="registrationForm">
+                                    <div class="form-group">
+                                        <label for="fullName">Inscrivez-vous</label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Nom complet" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Adresse email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="password" name="password" minlength="10" placeholder="Mot de passe" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-eye-slash" id="togglePassword"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <p><i>Le mot de passe doit contenir au minimum 10 caractères dont 1 caractère spéciale</i></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmer votre mot de passe" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-eye-slash" id="toggleConfirmPassword"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                                        <button type="submit" class="btn btn-dark float-right">S'inscrire</button><br><br>
+                                    </div>
+                                </form>
+    
+                                <!-- Boutons S'inscrire avec Facebook et Google -->
+                                <div class="row mt-4 ">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-primary w-100"><i class="fab fa-facebook"></i> S'inscrire avec Facebook</button><br><br>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-danger w-100"><i class="fab fa-google"></i> S'inscrire avec Google</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bloc 2 - Photo -->
+                    <div class="photo-container col-md-6 rounded-start mt-2">
+                        <img src="ressources/images/bandeau-accueil.jpg" alt="Photo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <!-- Pied de Page -->
+    <footer>
+        <div class="text-center mt-4">
+                <h4>
+                    <i class="fa-solid fa-location-dot"></i>Futur Digital
+                </h4> 
+                <p>Web & Website Local</p>
+            </i>  
+        </div>
+
+    </footer>
+
+
+    </main>
+<!-- JavaScript pour masquer/démasquer le mot de passe -->
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        var passwordInput = document.getElementById('password');
+        var type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+    });
+
+    document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+        var confirmPasswordInput = document.getElementById('confirmPassword');
+        var type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        confirmPasswordInput.setAttribute('type', type);
+    });
+</script>
+
+<!-- JavaScript pour la validation du formulaire  -->
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function (event) {
+        
+        // Exemple de validation basique:
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password == confirmPassword) {
+            alert("Inscription réussit avec succés!");
+        }
+        else {
+            alert("Les mots de passe ne correspondent pas!");
+            event.preventDefault(); // Empêche l'envoi du formulaire
+        }
+    });
+</script>
+
+    <!-- bootstrap js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
